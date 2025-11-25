@@ -1,4 +1,4 @@
-package com.example.LEGAREA.service.task;
+package com.example.LEGAREA.service.staff;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

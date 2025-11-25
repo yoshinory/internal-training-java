@@ -1,7 +1,7 @@
-package com.example.LEGAREA.repository.task;
+package com.example.LEGAREA.repository.staff;
 
-import com.example.LEGAREA.service.task.StaffDatailEntity;
-import com.example.LEGAREA.service.task.StaffEntity;
+import com.example.LEGAREA.service.staff.StaffDatailEntity;
+import com.example.LEGAREA.service.staff.StaffEntity;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

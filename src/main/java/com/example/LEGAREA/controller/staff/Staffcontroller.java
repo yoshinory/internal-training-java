@@ -1,8 +1,8 @@
-package com.example.LEGAREA.controller.task;
+package com.example.LEGAREA.controller.staff;
 
-import com.example.LEGAREA.service.task.StaffDatailEntity;
-import com.example.LEGAREA.service.task.StaffEntity;
-import com.example.LEGAREA.service.task.StaffService;
+import com.example.LEGAREA.service.staff.StaffDatailEntity;
+import com.example.LEGAREA.service.staff.StaffEntity;
+import com.example.LEGAREA.service.staff.StaffService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
