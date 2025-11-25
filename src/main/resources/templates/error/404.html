@@ -8,12 +8,14 @@
     <title>トップページ</title>
 </head>
 <body>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 <section layout:fragment="content">
     <div class="text-center">
         <h1 class="display-1">404 Not Found</h1>
-        <p>お探しのページは見つかりません</p>
-        <a th:href="@{/}" class="btn btn-primary mt-3">トップページに戻る</a>
+        <p>お探しのページが見つかりません</p>
+        <a th:href="@{/}" class="btn btn-info mt-3">トップページに戻る</a>
     </div>
+
 </section>
 </body>
 </html>
