@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <title>社員詳細</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <!-- タイトル -->
+    <h1 class="mb-4">社員詳細情報</h1>
+    <div>
+        <table class="table table-hover table-bordered">
+            <thead class="table-primary">
+            <tr>
+                <th>社員コード</th>
+                <th>名前</th>
+                <th>セイ</th>
+                <th>メイ</th>
+                <th>部署</th>
+                <th>役職</th>
+                <th>年齢</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="staffDetail : ${staffDetailList}">
+                <td th:text="${staffDetail.staffid}"></td>
+                <td th:text="${staffDetail.name}"></td>
+                <td th:text="${staffDetail.firstName}"></td>
+                <td th:text="${staffDetail.lastName}"></td>
+                <td th:text="${staffDetail.division}"></td>
+                <td th:text="${staffDetail.position}"></td>
+                <td th:text="${staffDetail.age}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/list}"
+           class="btn btn-primary btn-lg">戻る</a>
+    </div>
+</section>
+</body>
+</html>
