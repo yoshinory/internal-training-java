@@ -28,8 +28,15 @@ public class Staffcontroller {
 
     @GetMapping("/detail/{staffid}")
     public String showDetail(@PathVariable String staffid, Model model) {
-        List<StaffDetailEntity> staff = staffService.findDatail(staffid); // DBから1件取得
-        model.addAttribute("staffDetailList", staff);
+        StaffDetailEntity staff = staffService.findDatail(staffid); // DBから1件取得
+        // データが取得できたか確認
+        if(staff==null)
+        {
+            // 空の社員情報を作成
+            staff =new StaffDetailEntity();
+        }
+        model.addAttribute("staffDetail", staff);
+
         return "staff/detail"; // 詳細画面テンプレート
     }
 

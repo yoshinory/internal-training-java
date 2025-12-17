@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class StaffEntity {
-    private String staffid;
+    private String staffId;
     private String name;
     private String division;
 }

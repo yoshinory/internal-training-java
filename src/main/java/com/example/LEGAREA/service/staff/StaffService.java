@@ -17,10 +17,18 @@ public class StaffService {
         return  staffRepository.select();
     }
 
-    public List<StaffDetailEntity> findDatail(String taskid) {
+    public StaffDetailEntity findDatail(String Staffid) {
+
+        try{
+            return staffRepository.selectByID(Staffid);
+        }
+        catch (Exception ex)
+        {
+            // 取得失敗時は空データを返す
+            return new StaffDetailEntity();
+        }
 
 
-        return staffRepository.selectByID(taskid);
 
 
     }

@@ -23,6 +23,6 @@ public interface StaffRepository {
             "INNER JOIN staffdetail sd " +
             "ON si.staffid=sd.staffid " +
             "WHERE si.staffid = #{staffid} ")
-    List<StaffDetailEntity> selectByID(@Param("staffid") String staffid);
+    StaffDetailEntity selectByID(@Param("staffid") String staffid);
 
 }

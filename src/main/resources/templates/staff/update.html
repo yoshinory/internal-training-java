@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <title>社員詳細</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <!-- タイトル -->
+    <h1 class="mb-4">社員情報更新</h1>
+
+    <!-- 検索フォーム -->
+    <form th:action="@{/update}" method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <label>
+                <input type="text" name="staffId" class="form-control" placeholder="社員コードで検索">
+            </label>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">検索</button>
+        </div>
+    </form>
+
+    <!-- メッセージ表示 -->
+    <div th:if="${message != null}" class="alert alert-warning" role="alert">
+        <span th:text="${message}"></span>
+    </div>
+
+    <!-- 社員詳細テーブル -->
+    <!-- 更新フォーム -->
+    <form th:action="@{/update}" th:object="${staffUpdate}" method="post" onsubmit="return true;">
+        <table class="table table-hover table-bordered">
+            <thead class="table-primary">
+            <tr>
+                <th>社員コード</th>
+                <th>名前</th>
+                <th>セイ</th>
+                <th>メイ</th>
+                <th>部署</th>
+                <th>役職</th>
+                <th>年齢</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="text" th:field="*{staffId}" readonly></td>
+                <td><input type="text" th:field="*{name}"></td>
+                <td><input type="text" th:field="*{firstName}"></td>
+                <td><input type="text" th:field="*{lastName}"></td>
+                <td><input type="text" th:field="*{division}"></td>
+                <td><input type="text" th:field="*{position}"></td>
+                <td><input type="number" th:field="*{age}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-warning btn-lg">更新</button>
+            <a th:href="@{/}" class="btn btn-secondary btn-lg">戻る</a>
+        </div>
+    </form>
+
+</section>
+</body>
+</html>
