@@ -4,19 +4,24 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <head>
-    <title>社員情報更新</title>
+    <title>社員情報削除</title>
 </head>
 <body>
 <section layout:fragment="content">
     <!-- タイトル -->
-    <h1 class="mb-4">社員情報更新</h1>
+    <h1 class="mb-4">社員情報削除</h1>
 
     <!-- 検索フォーム -->
-    <form th:action="@{/update}" method="get" class="row g-3 mb-3">
+    <form th:action="@{/delete}" method="get" class="row g-3 mb-3">
         <div class="col-auto">
-            <label>
-                <input type="text" name="staffId" class="form-control" placeholder="社員コードで検索">
-            </label>
+            <select name="staffId" class="form-select">
+                <option value="" disabled selected>社員を選択してください</option>
+                <option th:each="staff : ${staffList}"
+                        th:value="${staff.staffId}"
+                        th:text="${staff.staffId + ' : ' + staff.name}">
+                </option>
+            </select>
+
         </div>
         <div class="col-auto">
             <button type="submit" class="btn btn-primary">検索</button>
@@ -29,8 +34,8 @@
     </div>
 
     <!-- 社員詳細テーブル -->
-    <!-- 更新フォーム -->
-    <form th:action="@{/update}" th:object="${staffUpdate}" method="post" onsubmit="return true;">
+    <!-- 削除フォーム -->
+    <form th:action="@{/delete}" th:object="${staffDelete}" method="post" onsubmit="return true;">
         <table class="table table-hover table-bordered">
             <thead class="table-primary">
             <tr>
@@ -57,7 +62,7 @@
             </tbody>
         </table>
         <div class="col-auto">
-            <button type="submit" class="btn btn-warning btn-lg">更新</button>
+            <button type="submit" class="btn btn-danger btn-lg">削除</button>
             <a th:href="@{/}" class="btn btn-secondary btn-lg">戻る</a>
         </div>
     </form>

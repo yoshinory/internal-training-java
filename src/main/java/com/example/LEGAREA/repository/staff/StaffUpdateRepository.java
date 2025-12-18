@@ -16,7 +16,7 @@ public interface StaffUpdateRepository {
             "SET firstName = #{firstName}, lastName = #{lastName}, " +
             "    position = #{position}, age = #{age} " +
             "WHERE sd.staffid = #{staffId}")
-    int updateStaff(StaffDetailEntity staffDetailEntity);
+    void updateStaff(StaffDetailEntity staffDetailEntity);
 
 
 }
