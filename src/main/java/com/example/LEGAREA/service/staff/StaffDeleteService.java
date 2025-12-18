@@ -15,8 +15,6 @@ public class StaffDeleteService {
     @Transactional
     public String Deletestaff(StaffDetailEntity Entity) {
 
-        String message=null;
-
         try
         {
             if(Entity == null || Entity.getStaffId()==null)
