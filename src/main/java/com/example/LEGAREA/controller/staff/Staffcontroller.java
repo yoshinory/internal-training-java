@@ -22,19 +22,13 @@ public class Staffcontroller {
     @GetMapping
     public String showEmployeeList(Model model) {
         List<StaffEntity> staffList = staffService.find();
-        model.addAttribute("staffList", staffList);
         return "staff/list";
     }
 
     @GetMapping("/detail/{staffid}")
     public String showDetail(@PathVariable String staffid, Model model) {
         StaffDetailEntity staff = staffService.findDatail(staffid); // DBから1件取得
-        // データが取得できたか確認
-        if(staff==null)
-        {
-            // 空の社員情報を作成
-            staff =new StaffDetailEntity();
-        }
+
         model.addAttribute("staffDetail", staff);
 
         return "staff/detail"; // 詳細画面テンプレート

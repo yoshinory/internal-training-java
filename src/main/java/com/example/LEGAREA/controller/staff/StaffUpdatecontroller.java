@@ -28,11 +28,6 @@ public class StaffUpdatecontroller {
                 ? new StaffDetailEntity()
                 : staffService.findDatail(staffId);
 
-        // 初回はIDが必ずNULLでくる
-        if (staff == null) {
-            staff = new StaffDetailEntity();
-            model.addAttribute("message", "該当する社員が見つかりませんでした。");
-        }
 
         model.addAttribute("staffUpdate", staff); //
         return "staff/update";
