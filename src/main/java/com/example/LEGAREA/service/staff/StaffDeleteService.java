@@ -17,7 +17,7 @@ public class StaffDeleteService {
 
         try
         {
-            if(Entity == null || Entity.getStaffId()==null)
+            if(Entity == null || Entity.getStaffId()==null || Entity.getStaffId().isEmpty())
             {
                 return "入力データが不正です";
             }
